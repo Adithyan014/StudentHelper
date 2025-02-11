@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Helper</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; padding: 0; }
+        .container { max-width: 800px; margin: auto; }
+        textarea { width: 100%; height: 100px; }
+        button { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Study Helper</h1>
+        
+        <h2>Summarized Notes & Videos</h2>
+        <input type="text" id="searchTopic" placeholder="Enter topic">
+        <button onclick="fetchVideos()">Search Videos</button>
+        <div id="videoResults"></div>
+        
+        <h2>Upload PYQ Paper</h2>
+        <input type="file" id="pyqUpload">
+        <button onclick="analyzePYQ()">Analyze</button>
+        <p id="pyqResult"></p>
+        
+        <h2>Chat with AI</h2>
+        <textarea id="chatInput" placeholder="Ask a question..."></textarea>
+        <button onclick="askChatGPT()">Send</button>
+        <p id="chatResponse"></p>
+    </div>
+
+    <script>
+        function fetchVideos() {
+            let topic = document.getElementById("searchTopic").value;
+            document.getElementById("videoResults").innerHTML = "(YouTube search results will appear here)";
+        }
+        
+        function analyzePYQ() {
+            document.getElementById("pyqResult").innerText = "(Most repeated questions will be shown here)";
+        }
+        
+        function askChatGPT() {
+            let query = document.getElementById("chatInput").value;
+            document.getElementById("chatResponse").innerText = "(ChatGPT response will appear here)";
+        }
+    </script>
+</body>
+</html>
